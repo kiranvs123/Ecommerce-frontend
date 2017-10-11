@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eshop @ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="@Url.Content("/css/bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("/css/style.css")" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar-header">
+            <header>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <h1 class="logo"><i class="glyphicon glyphicon-shopping-cart"></i>Happy <span class="shop">Shopping</span></h1>
+                        <p class="subtext">Make shopping fun</p>
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <form class="form-inline">
+                            <div class="form-group ">
+                                <label> Email: </label>
+                                <input type="email" class="form-control" placeholder="Enter Email...">
+                            </div>
+                            <div class="form-group">
+                                <label> Password: </label>
+                                <input type="password" class="form-control" placeholder="Enter Password...">
+                            </div>
+                            <button type="submit" class="btn btn-success"> Login </button>
+                        </form>
+                    </div>
+                </div>
+            </header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav nav-tabs ">
+                            <li> <a class="nav-link active" onclick="getViewWork()"><b>Home</b><span class="sr-only">(current)</span></a></li>
+                            <li><a class="nav-link" href="#">New In The store</a></li>
+                            <li><a class="nav-link" href="#">Deals</a></li>
+                            <li><a class="nav-link" href="#">My Account</a></li>
+                            <li class="form-inline pull-right">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="jumbotron">
+                <ul class="nav nav-tabs tablist" role="tablist">
+                    <li role="presentation" class="active">
+                        <a class="nav-link active" data-toggle="tab" aria-controls="featured" href="#featured" role="tab">Featured Item</a>
+                    </li>
+                    <li role="presentation">
+                        <a class="nav-link" data-toggle="tab" aria-controls="best" href="#best" role="tab">Best Seller</a>
+                    </li>
+                    <li role="presentation">
+                        <a class="nav-link" data-toggle="tab" aria-controls="discount" href="#discount" role="tab">Discounts</a>
+                    </li>
+                    <li role="presentation">
+                        <a class="nav-link" data-toggle="tab" aria-controls="product" href="#product" role="tab">Premium Product</a>
+                    </li>
+                    <li role="presentation">
+                        <a class="nav-link" data-toggle="tab" aria-controls="gift" href="#gift" role="tab">Gifts</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="featured" role="tabpanel">
+                        <div class="tab-text">
+                            <h2>Nokia 6 </h2>
+                            <p>
+                                Donec fringilla auctor consectetur. Pellentesque turpis ante,
+                                ultricies vitae faucibus at, placerat convallis nisl. Quisque
+                                iaculis nec nulla ut volutpat. Nunc consectetur mi turpis.
+                            </p>
+                            <a onclick="getViewProduct()" class="btn btn-primary">Read More</a>
+                        </div>
+                        <img class="slide-img" src="~/img/nokia.jpg" />
+                    </div>
+                    <div class="tab-pane" id="best" role="tabpanel">
+                        <div class="tab-text">
+                            <h2>Fire HD Tablet with Alexa</h2>
+                            <p>
+                                Donec fringilla auctor consectetur. Pellentesque turpis ante,
+                                ultricies vitae faucibus at, placerat convallis nisl. Quisque
+                                iaculis nec nulla ut volutpat. Nunc consectetur mi turpis.
+                            </p>
+                            <a href="products" class="btn btn-primary">Read More</a>
+                        </div>
+                        <img class="slide-img" src="~/img/best.jpg" />
+
+                    </div>
+                    <div class="tab-pane" id="discount" role="tabpanel">
+                        <div class="tab-text">
+                            <h2>Happy deals</h2>
+                            <p>
+                                Donec fringilla auctor consectetur. Pellentesque turpis ante,
+                                ultricies vitae faucibus at, placerat convallis nisl. Quisque
+                                iaculis nec nulla ut volutpat. Nunc consectetur mi turpis.
+                            </p>
+                            <a href="products" class="btn btn-primary">Read More</a>
+                        </div>
+                        <img class="slide-img" src="~/img/discounts.jpg" />
+
+                    </div>
+                    <div class="tab-pane" id="product" role="tabpanel">
+                        <div class="tab-text">
+                            <h2>Shop Everything</h2>
+                            <p>
+                                Donec fringilla auctor consectetur. Pellentesque turpis ante,
+                                ultricies vitae faucibus at, placerat convallis nisl. Quisque
+                                iaculis nec nulla ut volutpat. Nunc consectetur mi turpis.
+                            </p>
+                            <a href="products" class="btn btn-primary">Read More</a>
+                        </div>
+                        <img class="slide-img" src="~/img/products.jpg" />
+
+                    </div>
+                    <div class="tab-pane" id="gift" role="tabpanel">
+                        <div class="tab-text">
+                            <h2>Microsoft Surface</h2>
+                            <p>
+                                Donec fringilla auctor consectetur. Pellentesque turpis ante,
+                                ultricies vitae faucibus at, placerat convallis nisl. Quisque
+                                iaculis nec nulla ut volutpat. Nunc consectetur mi turpis.
+                            </p>
+                            <a href="products" class="btn btn-primary">Read More</a>
+                        </div>
+                        <img class="slide-img" src="~/img/premium.jpg" />
+
+                    </div>
+                </div>
+
+            </div>
+
+            <section id="product">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/Motoz.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$500</h4>
+                                <h4><a href="#" ">Moto Z Droid</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">366 reviews</p>
+                                <p>
+                                    <i><span class="glyphicon glyphicon-star"></span></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/samsung.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$450</h4>
+                                <h4><a href="product.html">Samsung galaxy note 8</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">389reviews</p>
+                                <p>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/iphone_.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$1024</h4>
+                                <h4><a href="product.html">iphone s8</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">482 reviews</p>
+                                <p>
+                                    <i><span class="glyphicon glyphicon-star"></span></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/LGtablet.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$400</h4>
+                                <h4><a href="product.html">LG Tablet</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">366 reviews</p>
+                                <p>
+                                    <i><span class="glyphicon glyphicon-star"></span></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/ipad.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$499</h4>
+                                <h4><a href="product.html">ipad</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">280reviews</p>
+                                <p>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/tablet1.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$475</h4>
+                                <h4><a href="product.html">Samaung tablet</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">154 reviews</p>
+                                <p>
+                                    <i><span class="glyphicon glyphicon-star"></span></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/LGtv.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$549</h4>
+                                <h4><a href="product.html">LG HD TV</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">612 reviews</p>
+                                <p>
+                                    <i><span class="glyphicon glyphicon-star"></span></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/UHDtv.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$500</h4>
+                                <h4><a href="product.html">UHD TV</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">276reviews</p>
+                                <p>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="img-thumbnail">
+                            <img src="~/img/TCLtv.jpg" />
+                            <div class="figure-caption">
+                                <h4 class="pull-right">$750</h4>
+                                <h4><a href="product.html">LTC LED TV</a></h4>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lorem eget maximus elit fringilla.</p>
+                            </div>
+                            <div class="rating">
+                                <p class="pull-right">482 reviews</p>
+                                <p>
+                                    <i><span class="glyphicon glyphicon-star"></span></i>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    function getViewWork() {
+        var url = "@Html.Raw(Url.Action("Index", "Home"))";
+        $('#dashboard-views').load(url);
+    }
+        function getProduct() {
+            var url = "@Html.Raw(Url.Action("product", "Home"))";
+            $('#dashboard-views').load(url);
+        }
+    </script>
+
+
+    <!-- Bootstrap core JavaScript
+     ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+</html>
